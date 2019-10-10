@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack-base.conf with an alias.
 
 import Vue from 'vue';
+import VueMeta from 'vue-meta';
 import ApiService from '@/api/ApiService';
 import App from './App';
 import store from './store';
@@ -9,6 +10,7 @@ import GoogleAnalytics from './analytics/GoogleAnalytics';
 
 function createApp(router, __INITIAL_STATE__) {
   Vue.config.productionTip = false;
+  Vue.use(VueMeta);
 
   ApiService.init();
   const analytics = GoogleAnalytics();

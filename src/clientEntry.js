@@ -1,5 +1,6 @@
 import smoothscroll from 'smoothscroll-polyfill';
 import Vue from 'vue';
+import VueMeta from 'vue-meta';
 import router from './router/client';
 import createApp from './main';
 import abTests from './abTests';
@@ -7,6 +8,7 @@ import sentryInit from './sentry/browser';
 
 sentryInit();
 smoothscroll.polyfill();
+Vue.use(VueMeta);
 
 // a global mixin that calls `asyncData` when a route component's params change
 Vue.mixin({

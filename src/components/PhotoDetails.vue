@@ -104,6 +104,9 @@ export default {
     ccLicenseURL() {
       return `${this.image.license_url}?ref=ccsearch`;
     },
+    imageURL() {
+      return this.image.foreign_landing_url;
+    },
   },
   methods: {
     onGoBackToSearchResults() {
@@ -125,6 +128,12 @@ export default {
       const licenseURL = `${this.ccLicenseURL}&atype=html`;
       return attributionHtml(this.image, licenseURL, this.fullLicenseName);
     },
+  },
+  metaInfo: {
+    title: 'Testing here',
+    meta: [
+      { name: 'test:description', content: `I found an image through CC search @creativecommons: ${this.imageURL}` },
+    ],
   },
 };
 </script>
